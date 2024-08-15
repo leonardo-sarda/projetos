@@ -8,7 +8,7 @@ import * {
 body {
   background-color: rgb(205, 226, 226);
   -webkit-font-smoothing: antialiased;
-  /* height: 100vh; */
+  /* height: 100vh; 
   /* font-family: "Poppins", sans-serif; */
 }
 
@@ -43,14 +43,30 @@ body {
   background-color: #333;
   /*border: 1px solid red;*/
   width: 10%;
-  height: 70vh;
+  height: 0vh;
   border-radius: 15px;
   background: white;
   opacity: 40%;
 }
 
 .conteudo {
-  flex: -1;
+  display: flex;
+  flex: 1;
+  margin-top: -35%;
+  margin-left: 15%;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 50%; /* Alterei aqui */
 }
 
 /* .formulario {
