@@ -1,0 +1,90 @@
+import * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  background-color: rgb(205, 226, 226);
+  -webkit-font-smoothing: antialiased;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  place-content: center;
+
+  width: 100%;
+  max-width: 700px;
+}
+
+.content form {
+  margin: 80px 0;
+  width: 340px;
+  text-align: center;
+}
+
+.content h1 {
+  margin-bottom: 24px;
+  /* font-size: 40px; */
+}
+
+.content a {
+  color: #050505;
+  display: block;
+  margin-top: 24px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+input {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 0;
+}
+
+button {
+  background: rgb(224, 193, 18);
+  height: 56px;
+  border-radius: 10px;
+  width: 100%;
+  border: 0;
+  padding: 0 16px;
+  color: #312e38;
+  margin-top: 17px;
+}
+
+/* .image-bg {
+  /* border: 1px solid blue; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+}
+.image-bg img {
+  /* border: 1px solid black;
+} */
+
+.logo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 10%;
+}
+
+.logo img {
+  width: 700px;
+}
