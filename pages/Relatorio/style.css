@@ -1,0 +1,51 @@
+/* styles.css */
+
+.container {
+  background-image: url("/assets/logo.png"); /* Substitua pelo caminho da sua imagem */
+  background-size: auto; /* Faz com que a imagem cubra toda a área */
+  background-position: right; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  height: 100vh; /* Faz com que o contêiner cubra toda a altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  width: 200px;
+  /* border: 1px solid blue; */
+  height: 100%;
+  border-radius: 2px;
+  background: rgb(224, 193, 18);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 20px 50px;
+}
+
+.sidebar li {
+  margin-top: 20px;
+}
+
+.menu {
+  display: flex;
+  height: 100px;
+  /* border: 1px solid black; */
+  width: 100vw;
+  background-color: rgba(224, 193, 18, 0.212);
+  border-radius: 2px;
+  /* justify-content: right; */
+  flex-direction: column;
+  align-items: end;
+
+  /*  */
+}
+
+.menu-link h1,
+a {
+  margin: 10px 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
