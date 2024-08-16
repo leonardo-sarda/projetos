@@ -1,4 +1,4 @@
-import * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,13 +8,13 @@ import * {
 body {
   background-color: rgb(205, 226, 226);
   -webkit-font-smoothing: antialiased;
+  height: 100vh;
   /* font-family: "Poppins", sans-serif; */
 }
 
 .container {
-  height: 100vh;
-
   display: flex;
+  height: 100vh;
   align-items: stretch;
 }
 
@@ -33,6 +33,11 @@ body {
   margin: 80px 0;
   width: 340px;
   text-align: center;
+}
+
+.content input:hover {
+  border: 2px solid black;
+  transition: 0.1s;
 }
 
 .content h1 {
@@ -66,17 +71,6 @@ button {
   color: #312e38;
   margin-top: 17px;
 }
-
-/* .image-bg {
-  /* border: 1px solid blue; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0;
-}
-.image-bg img {
-  /* border: 1px solid black;
-} */
 
 .logo {
   align-items: center;
