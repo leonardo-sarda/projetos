@@ -70,12 +70,14 @@ button {
   padding: 0 16px;
   color: #312e38;
   margin-top: 17px;
+  cursor: pointer;
 }
 
 .logo {
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-bottom: 5%;
   margin-left: 10%;
 }
 
