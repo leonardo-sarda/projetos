@@ -144,12 +144,12 @@ body {
   border-radius: 0px 5px 5px 0px;
   width: 100px;
   border: none;
-  background-color: rgb(96, 238, 103);
+  background-color: rgb(79, 169, 243);
 }
 
 .pesquisa button:hover {
   transition: 0.1s;
-  background-color: rgb(81, 199, 86);
+  background-color: rgb(66, 143, 206);
 }
 
 /*Parte do formulario*/
