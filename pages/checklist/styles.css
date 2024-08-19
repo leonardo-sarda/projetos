@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(205, 226, 226);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  width: auto;
+  height: 80px; /* Ajuste a altura do cabeçalho conforme necessário */
+  background-color: rgba(224, 193, 18, 0.212);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 200px;
+}
+
+.menu-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu-link h1 {
+  margin: 0;
+}
+
+.menu-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex: 1; /* Faz com que o container ocupe o espaço restante da tela */
+}
+
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 20px); /* Altura total menos a altura do cabeçalho */
+  background: rgb(224, 193, 18);
+  padding: 20px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sidebar img {
+  width: 100%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin-top: 20px;
+}
+
+.main {
+  flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+  padding: 20px;
+  background-color: white;
+  overflow: auto; /* Adiciona rolagem se o conteúdo for maior que a área visível */
+}
