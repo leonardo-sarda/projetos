@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 588px;
+
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
