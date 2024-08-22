@@ -18,6 +18,7 @@
       <div>
         <img src="" alt="" />
       </div>
+      <a href="../pages/Rel/index.html">Relatorio</a>
     </div>
 
     <div id="modal" class="modal">
@@ -30,9 +31,13 @@
 
     <script>
       const questions = [
-        "Qual é o seu nome?",
-        "Qual é o seu e-mail?",
-        "Qual é a sua idade?",
+        "Informer Veículo?",
+        "Informe KM",
+        "Diesel",
+        "Óleo",
+        "Catraca",
+        "ADITIVO",
+        "MOTORISTA",
       ];
       let currentQuestionIndex = 0;
 
@@ -57,8 +62,13 @@
           return;
         }
 
+        // Armazena a resposta no localStorage
+        localStorage.setItem("answer" + currentQuestionIndex, answer);
         currentQuestionIndex++;
+
         if (currentQuestionIndex < questions.length) {
+          // Atualiza o índice da pergunta no localStorage
+          localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
           showQuestion();
         } else {
           alert("Cadastro completo!");
@@ -68,7 +78,8 @@
 
       function closeModal() {
         document.getElementById("modal").style.display = "none";
-        currentQuestionIndex = 0;
+        // Limpa o índice da pergunta quando o modal é fechado
+        localStorage.removeItem("currentQuestionIndex");
       }
     </script>
   </body>

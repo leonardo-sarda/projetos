@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Relatório</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1>Relatório de Cadastro</h1>
+        <a href="index.html">Voltar ao Formulário</a>
+      </div>
+      <div class="report">
+        <h2>Dados Coletados</h2>
+        <div id="report-content">
+          <!-- Dados do formulário serão inseridos aqui -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function generateReport() {
+        const questions = [
+          "Qual é o seu nome?",
+          "Qual é o seu e-mail?",
+          "Qual é a sua idade?",
+        ];
+        let reportContent = "<ul>";
+
+        questions.forEach((question, index) => {
+          const answer =
+            localStorage.getItem("answer" + index) || "Não respondido";
+          reportContent += `<li><strong>${question}</strong>: ${answer}</li>`;
+        });
+
+        reportContent += "</ul>";
+        document.getElementById("report-content").innerHTML = reportContent;
+      }
+
+      // Gera o relatório ao carregar a página
+      window.onload = generateReport;
+    </script>
+  </body>
+</html>
