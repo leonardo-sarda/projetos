@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 588px;
+
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+.logo {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+.formulario {
+  text-align: center;
+  padding: 0 24px;
+}
+
+/*.formulario form {
+  margin: 40px auto 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario input {
+  width: 400px;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 0 20px;
+  color: black;
+  font-weight: 500px;
+  font-size: 20px;
+}*/
+
+.formulario button {
+  height: 60px;
+  width: 200px;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(224, 193, 18);
+  color: black;
+  font-weight: 500px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-body p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#modal-body input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#next-btn:hover {
+  background-color: #218838;
+}

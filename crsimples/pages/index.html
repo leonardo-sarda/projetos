@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Lgoin</title>
+  </head>
+  <body>
+    <div class="Container">
+      <div class="logo">
+        <h1>Leonardo</h1>
+        <a href="/index.html">Sair</a>
+      </div>
+      <div class="formulario">
+        <button onclick="startRegister()">Cadastrar</button>
+      </div>
+      <div>
+        <img src="" alt="" />
+      </div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-body"></div>
+        <button id="next-btn" onclick="nextQuestion()">Proximo</button>
+      </div>
+    </div>
+
+    <script>
+      const questions = [
+        "Qual é o seu nome?",
+        "Qual é o seu e-mail?",
+        "Qual é a sua idade?",
+      ];
+      let currentQuestionIndex = 0;
+
+      function startRegister() {
+        document.getElementById("modal").style.display = "block";
+        showQuestion();
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestionIndex];
+        document.getElementById("modal-body").innerHTML = `
+          <p>${question}</p>
+          <input type="text" id="answer" placeholder="Digite sua resposta" />
+        `;
+        document.getElementById("answer").focus();
+      }
+
+      function nextQuestion() {
+        const answer = document.getElementById("answer").value;
+        if (answer.trim() === "") {
+          alert("Por favor, responda a pergunta.");
+          return;
+        }
+
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          alert("Cadastro completo!");
+          closeModal();
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+        currentQuestionIndex = 0;
+      }
+    </script>
+  </body>
+</html>
