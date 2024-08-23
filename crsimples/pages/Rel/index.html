@@ -9,8 +9,8 @@
   <body>
     <div class="container">
       <div class="logo">
-        <h1>Relatório de Cadastro</h1>
-        <a href="index.html">Voltar ao Formulário</a>
+        <h1>Relatório</h1>
+        <a href="../index.html">Voltar</a>
       </div>
       <div class="report">
         <h2>Dados Coletados</h2>
@@ -20,27 +20,6 @@
       </div>
     </div>
 
-    <script>
-      function generateReport() {
-        const questions = [
-          "Qual é o seu nome?",
-          "Qual é o seu e-mail?",
-          "Qual é a sua idade?",
-        ];
-        let reportContent = "<ul>";
-
-        questions.forEach((question, index) => {
-          const answer =
-            localStorage.getItem("answer" + index) || "Não respondido";
-          reportContent += `<li><strong>${question}</strong>: ${answer}</li>`;
-        });
-
-        reportContent += "</ul>";
-        document.getElementById("report-content").innerHTML = reportContent;
-      }
-
-      // Gera o relatório ao carregar a página
-      window.onload = generateReport;
-    </script>
+    <script src="../../scripts/script.js"></script>
   </body>
 </html>

@@ -73,6 +73,17 @@ button:hover {
   background-color: #0056b3;
 }
 
+.Rel {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.Rel a {
+  text-decoration: none;
+}
+
+/*Estilização do Modal*/
+
 .modal {
   display: none;
   position: fixed;

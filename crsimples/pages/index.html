@@ -10,17 +10,20 @@
     <div class="Container">
       <div class="logo">
         <h1>Leonardo</h1>
-        <a href="/index.html">Sair</a>
+        <a href="/crsimples/index.html">Sair</a>
       </div>
       <div class="formulario">
         <button onclick="startRegister()">Cadastrar</button>
       </div>
-      <div>
-        <img src="" alt="" />
+      <div class="image-carro">
+        <img src="/assets/" alt="" />
       </div>
-      <a href="../pages/Rel/index.html">Relatorio</a>
+      <div class="Rel">
+        <a href="../pages/Rel/index.html">Relatorio</a>
+      </div>
     </div>
 
+    <!--Modal para perguntas-->
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
@@ -31,14 +34,19 @@
 
     <script>
       const questions = [
-        "Informer Veículo?",
-        "Informe KM",
-        "Diesel",
-        "Óleo",
-        "Catraca",
-        "ADITIVO",
-        "MOTORISTA",
+        {
+          question: "Informe o Veículo?",
+          type: "autocomplete",
+          options: ["Carro 430", "Carro 590", "Carro 203", "Carro 875"],
+        },
+        { question: "Informe KM", type: "text" },
+        { question: "Diesel", type: "text" },
+        { question: "Óleo", type: "text" },
+        { question: "Catraca", type: "text" },
+        { question: "ADITIVO", type: "text" },
+        { question: "MOTORISTA", type: "text" },
       ];
+
       let currentQuestionIndex = 0;
 
       function startRegister() {
@@ -48,16 +56,63 @@
 
       function showQuestion() {
         const question = questions[currentQuestionIndex];
-        document.getElementById("modal-body").innerHTML = `
-          <p>${question}</p>
-          <input type="text" id="answer" placeholder="Digite sua resposta" />
-        `;
-        document.getElementById("answer").focus();
+        let html = `<p>${question.question}</p>`;
+
+        if (question.type === "autocomplete") {
+          html += `
+                    <div style="position: relative;">
+                        <input type="text" id="autocomplete-input" placeholder="Digite para sugerir opções" onkeyup="showSuggestions(event)" />
+                        <div id="suggestions" class="autocomplete-suggestions"></div>
+                    </div>
+                `;
+        } else {
+          html += `<input type="text" id="answer" placeholder="Digite sua resposta" />`;
+        }
+
+        document.getElementById("modal-body").innerHTML = html;
+        document.getElementById("autocomplete-input")?.focus();
+      }
+
+      function showSuggestions(event) {
+        const input = event.target;
+        const suggestionsContainer = document.getElementById("suggestions");
+        const query = input.value.toLowerCase();
+
+        if (query === "") {
+          suggestionsContainer.innerHTML = "";
+          return;
+        }
+
+        const question = questions[currentQuestionIndex];
+        const filteredOptions = question.options.filter((option) =>
+          option.toLowerCase().includes(query)
+        );
+
+        suggestionsContainer.innerHTML = filteredOptions
+          .map(
+            (option) => `
+                <div class="autocomplete-suggestion" onclick="selectSuggestion('${option}')">${option}</div>
+            `
+          )
+          .join("");
+      }
+
+      function selectSuggestion(value) {
+        document.getElementById("autocomplete-input").value = value;
+        document.getElementById("suggestions").innerHTML = "";
       }
 
       function nextQuestion() {
-        const answer = document.getElementById("answer").value;
-        if (answer.trim() === "") {
+        let answer;
+        const question = questions[currentQuestionIndex];
+
+        if (question.type === "autocomplete") {
+          answer = document.getElementById("autocomplete-input")?.value;
+        } else {
+          answer = document.getElementById("answer")?.value;
+        }
+
+        if (answer === "") {
           alert("Por favor, responda a pergunta.");
           return;
         }
