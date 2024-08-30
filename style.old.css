@@ -1,0 +1,42 @@
+}
+
+.menu-link h1,
+a {
+  margin: 10px 20px;
+  /* display: flex;
+  text-align: center;
+  justify-content: center;
+} */
+}
+
+.menu img {
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  /* border: 1px solid blue; */
+  min-height: 100vh;
+  border-radius: 2px;
+  background: rgb(224, 193, 18);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 20px 50px;
+}
+
+.sidebar li {
+  margin-top: 20px;
+}

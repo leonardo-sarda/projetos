@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Usuarios</title>
+  </head>
+  <body>
+    <header class="menu">
+      <img src="/assets/logo.png" alt="Menu" />
+      <div class="right">
+        <h1>Julia Basilio</h1>
+        <a href="/index.html">Logout</a>
+      </div>
+    </header>
+    <div class="container">
+      <aside class="side-menu">
+        <div class="accordion-item">
+          <button class="accordion-header">Home</button>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="/pages/home.html">Inicio</a></li>
+            </ul>
+          </div>
+          <button class="accordion-header">Usuario</button>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="">Cadastrar Usuario</a></li>
+            </ul>
+          </div>
+          <button class="accordion-header">Checklist</button>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="">Cadastrar Checklis</a></li>
+              <li><a href="">Cadastro geral</a></li>
+            </ul>
+          </div>
+          <button class="accordion-header">Relatorios</button>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="">Checklist</a></li>
+              <li><a href="">Usuarios</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="titulo-main">
+          <h1>Cadastro De Usuario</h1>
+        </div>
+        <div class="pesquisa">
+          <form action="teste.php">
+            <label for="pesquisa"></label>
+            <input type="text" id="pesquisa" placeholder="Pesquisar Usuario" />
+            <button type="submit">Pesquisar</button>
+          </form>
+        </div>
+        <div class="formulario">
+          <form action="">
+            <p>
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required />
+            </p>
+            <p>
+              <label for="login">Login</label>
+              <input type="text" name="login" id="login" />
+            </p>
+            <p>
+              <label for="password">Senha</label>
+              <input type="password" name="password" id="password" required />
+            </p>
+            <p>
+              <label for="status">Status</label>
+              <input type="text" name="status" id="status" />
+            </p>
+            <p>
+              <label for="adm">Admistrador</label>
+              <input type="text" name="adm" id="adm" />
+            </p>
+            <div class="botao">
+              <button class="bt-excluir" type="submit">Excluir</button>
+              <button class="bt-save" type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="/pages/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Lgoin</title>
+  </head>
+  <body>
+    <div class="Container">
+      <div class="logo">
+        <h1>Leonardo</h1>
+        <a href="/crsimples/index.html">Sair</a>
+      </div>
+      <div class="formulario">
+        <button onclick="startRegister()">Cadastrar</button>
+      </div>
+      <div class="image-carro">
+        <img src="/assets/" alt="" />
+      </div>
+      <div class="Rel">
+        <a href="../pages/Rel/index.html">Relatorio</a>
+      </div>
+    </div>
+
+    <!--Modal para perguntas-->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-body"></div>
+        <button id="next-btn" onclick="nextQuestion()">Proximo</button>
+      </div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "Informe o Veículo?",
+          type: "autocomplete",
+          options: ["Carro 430", "Carro 590", "Carro 203", "Carro 875"],
+        },
+        { question: "Informe KM", type: "text" },
+        { question: "Diesel", type: "text" },
+        { question: "Óleo", type: "text" },
+        { question: "Catraca", type: "text" },
+        { question: "ADITIVO", type: "text" },
+        { question: "MOTORISTA", type: "text" },
+      ];
+
+      let currentQuestionIndex = 0;
+
+      function startRegister() {
+        document.getElementById("modal").style.display = "block";
+        showQuestion();
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestionIndex];
+        let html = `<p>${question.question}</p>`;
+
+        if (question.type === "autocomplete") {
+          html += `
+                    <div style="position: relative;">
+                        <input type="text" id="autocomplete-input" placeholder="Digite para sugerir opções" onkeyup="showSuggestions(event)" />
+                        <div id="suggestions" class="autocomplete-suggestions"></div>
+                    </div>
+                `;
+        } else {
+          html += `<input type="text" id="answer" placeholder="Digite sua resposta" />`;
+        }
+
+        document.getElementById("modal-body").innerHTML = html;
+        document.getElementById("autocomplete-input")?.focus();
+      }
+
+      function showSuggestions(event) {
+        const input = event.target;
+        const suggestionsContainer = document.getElementById("suggestions");
+        const query = input.value.toLowerCase();
+
+        if (query === "") {
+          suggestionsContainer.innerHTML = "";
+          return;
+        }
+
+        const question = questions[currentQuestionIndex];
+        const filteredOptions = question.options.filter((option) =>
+          option.toLowerCase().includes(query)
+        );
+
+        suggestionsContainer.innerHTML = filteredOptions
+          .map(
+            (option) => `
+                <div class="autocomplete-suggestion" onclick="selectSuggestion('${option}')">${option}</div>
+            `
+          )
+          .join("");
+      }
+
+      function selectSuggestion(value) {
+        document.getElementById("autocomplete-input").value = value;
+        document.getElementById("suggestions").innerHTML = "";
+      }
+
+      function nextQuestion() {
+        let answer;
+        const question = questions[currentQuestionIndex];
+
+        if (question.type === "autocomplete") {
+          answer = document.getElementById("autocomplete-input")?.value;
+        } else {
+          answer = document.getElementById("answer")?.value;
+        }
+
+        if (answer === "") {
+          alert("Por favor, responda a pergunta.");
+          return;
+        }
+
+        // Armazena a resposta no localStorage
+        localStorage.setItem("answer" + currentQuestionIndex, answer);
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+          // Atualiza o índice da pergunta no localStorage
+          localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
+          showQuestion();
+        } else {
+          alert("Cadastro completo!");
+          closeModal();
+        }
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+        // Limpa o índice da pergunta quando o modal é fechado
+        localStorage.removeItem("currentQuestionIndex");
+      }
+    </script>
+  </body>
+</html>
