@@ -106,25 +106,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* .modal-question {
-  height: 100px;
-  margin: 20px 0;
-} */
-
-/* .modal-question input {
-  height: 80%;
-  width: 50%;
-  border-radius: 10px;
-  font-size: 30px;
-} */
-
-/* .modal-question input:hover {
-  background-color: #f8f8f8;
-  border-radius: 10px;
-
-  border: 3px solid rgb(96, 253, 96);
-} */
-
 .hidden {
   display: none;
   height: 100px;
@@ -167,4 +148,9 @@ button {
 
 .input-button-container button {
   margin-top: 10px;
+}
+
+label {
+  margin: 0 10px;
+  font-size: 20px;
 }
