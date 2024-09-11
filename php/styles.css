@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/***/
+
+.logo {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+.botao {
+  display: flex;
+
+  justify-content: center;
+}
+
+.botao button {
+  height: 60px;
+  width: 200px;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(224, 193, 18);
+  color: black;
+  font-weight: 500px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.link {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+/*Modal novo*/
+
+/*Estilização do Modal Antigo*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 20%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .modal-question {
+  height: 100px;
+  margin: 20px 0;
+} */
+
+/* .modal-question input {
+  height: 80%;
+  width: 50%;
+  border-radius: 10px;
+  font-size: 30px;
+} */
+
+/* .modal-question input:hover {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+
+  border: 3px solid rgb(96, 253, 96);
+} */
+
+.hidden {
+  display: none;
+  height: 100px;
+  margin: 20px 0;
+}
+
+input {
+  margin: 20px 0;
+  height: 80px;
+  width: 50%;
+  border-radius: 10px;
+  font-size: 30px;
+  align-items: center;
+}
+
+input:hover {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+
+  border: 3px solid rgb(96, 253, 96);
+}
+
+button {
+  background-color: rgb(76, 241, 76);
+  height: 80px;
+  width: 20%;
+  border-radius: 10px;
+}
+
+.input-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.input-button-container input {
+  margin-bottom: 10px;
+}
+
+.input-button-container button {
+  margin-top: 10px;
+}
